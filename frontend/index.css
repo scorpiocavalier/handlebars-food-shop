@@ -1,3 +1,7 @@
+:root {
+  --cushion: 15px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,7 +9,8 @@
 }
 
 body {
-  color: white;
+  display: grid;
+  grid: 8vh 1fr auto / auto;
 }
 
 button {
@@ -16,6 +21,10 @@ button {
 a {
   text-decoration: none;
   color: white;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .super-centered {
@@ -36,33 +45,30 @@ a {
 
 .pancake-stretching {
   flex: 1 1 300px;
-  margin: 10px;
+  margin: var(--cushion);
 }
 
 /* Header */
 header {
-  display: flex;
+  display: grid;
+  grid: auto / 250px auto 200px;
   align-items: center;
-  height: 50px;
-  background: fuchsia;
   padding: 0 10vw;
+  background: fuchsia;
 }
 
 header > h1 {
   font-size: larger;
-  width: 250px;
   background: slateblue;
 }
 
 nav {
-  width: 100%;
   background:  red;
 }
 
 nav > ul {
   display: flex;
   justify-content: space-evenly;
-  list-style-type: none;
   background:  violet;
 }
 
@@ -72,44 +78,86 @@ nav > ul > li {
 }
 
 #authentication {
+  background:  brown;
+}
+
+#authentication > ul {
   display: flex;
   justify-content: space-evenly;
-  background:  brown;
-  width: 250px;
+}
+
+#authentication > ul > li {
+  background: green;
+}
+
+/* Main */
+main {
+  display: grid;
+  grid: 72vh auto / auto;
 }
 
 /* Hero */
 #hero-section {
   width: 100%;
-  height: 80vh;
+  background: slategray;
+  position: relative;
+}
+
+#hero-image {
+  width: 100%;
+  height: 100%;
   background: slateblue;
 }
 
 #hero-container {
   background: goldenrod;
-  padding: 20px;
+  position: absolute;
+  width: 200px;
+  left: calc(50% - 100px);
+  bottom: 20%;
+  z-index: 10;
 }
 
 .hero-heading {
   background: hotpink;
-  padding: 10px;
+  padding: var(--cushion);
 }
 
 .hero-content {
   background: mediumpurple;
-  padding: 10px;
+  padding: var(--cushion);
 }
 
 /* Features */
 #features-section {
   background: brown;
   width: 80vw;
-  margin: 0 10vw;
-  padding: 20px 0;
+  margin: 0 auto;
+  padding: var(--cushion) 0;
 }
 
 .feature {
   background: mediumturquoise;
-  padding: 10px;
-  height: 400px;
+  height: 200px;
+}
+
+footer {
+  background: slategray;
+  padding: var(--cushion);
+}
+
+#footer-links ul {
+  background: darkorange;
+}
+
+#footer-links li {
+  padding: var(--cushion);
+}
+
+#footer-links a {
+  background: orangered;
+}
+
+#copyright {
+  background: darkviolet;
 }
